@@ -12,6 +12,10 @@ The container is developed under xfce-docker-container source and add the ROS, T
 
       docker run -d -p 5901:5901 -p 6901:6901 dl_vnc:dev
 
+- If you want to use GPU in container:
+
+      docker run --gpus all -d -p 5901:5901 -p 6901:6901 dl_vnc:dev
+
 - If you want to get into the container use interactive mode `-it` and `bash`
       
       docker run -it -p 5901:5901 -p 6901:6901 dl_vnc:dev bash
