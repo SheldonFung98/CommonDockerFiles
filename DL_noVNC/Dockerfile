@@ -2,9 +2,12 @@
 FROM nvcr.io/nvidia/pytorch:21.10-py3
 
 LABEL maintainer "SheldonFung"
-MAINTAINER Henry Huang "https://github.com/Sheldonvon98"
+MAINTAINER SheldonFung "https://github.com/Sheldonvon98"
 ENV REFRESHED_AT 2022-1-11
 
+ENV TZ=Australia/Melbourne
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ENV DEBIAN_FRONTEND noninteractive
 # Install sudo
 RUN apt-get update && \
     apt-get install -y sudo \
@@ -16,7 +19,7 @@ RUN apt-get update && \
 
 # Configure user
 ARG user=XQLab
-ARG passwd=00
+ARG passwd=asdasdasd
 ARG uid=1000
 ARG gid=1000
 ENV USER=$user
@@ -26,7 +29,7 @@ ENV GID=$gid
 RUN groupadd $USER && \
     useradd --create-home --no-log-init -g $USER $USER && \
     usermod -aG sudo $USER && \
-    echo "$PASSWD:$PASSWD" | chpasswd && \
+    echo "$USER:$PASSWD" | chpasswd && \
     chsh -s /bin/bash $USER && \
     # Replace 1000 with your user/group id
     usermod  --uid $UID $USER && \
