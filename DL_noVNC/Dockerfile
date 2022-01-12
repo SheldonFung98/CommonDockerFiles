@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 # Configure user
 ARG user=XQLab
-ARG passwd=asdasdasd
+ARG passwd=00
 ARG uid=1000
 ARG gid=1000
 ENV USER=$user
