@@ -4,7 +4,7 @@ This repository developed from ConSol/docker-headless-vnc-container, with provid
 
 
 ## Spec
-This is a Docker environmentalist equipped with pytorch and no-vnc(http vnc service) and TensorFlow-gpu.
+This is a Docker environmentalist equipped with pytorch and no-vnc(http vnc service).
 The container is developed under xfce-docker-container source and add the ROS, TensorFlow GPU environment on top of it, to provide a essential kit for anyone who develop with robotic and deep learning.
 
 ## Usage
